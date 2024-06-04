@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: multi-client-api-call-service
+
+  security:
+    oauth2:
+      client:
+        registration:
+
+          client1:
+            clientId: CLIENT1_ID
+            clientSecret: CLIENT1_SECRET
+            authorizationGrantType: client_credentials
+            scope:
+              - CLIENT1_SCOPES
+            provider: provider1
+
+          client2:
+            clientId: CLIENT2_ID
+            clientSecret: CLIENT2_SECRET
+            authorizationGrantType: client_credentials
+            scope:
+              - CLIENT2_SCOPES
+            provider: provider2
+
+        provider:
+          provider1:
+            tokenUri: PROVIDER1_TOKEN_URI
+          provider2:
+            tokenUri: PROVIDER2_TOKEN_URI
